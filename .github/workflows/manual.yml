@@ -22,6 +22,6 @@ jobs:
       run: aws --version
     - name: caller
       env:
-        AWS_ACCESS_KEY_ID: "ASIAW3HEQCWKGWMF67SG"
-        AWS_SECRET_ACCESS_KEY: "d5GNayLIbmAvjly2CMKO0iYO7jbGJIrmjCN5pULU"
+        AWS_ACCESS_KEY_ID: ${{ secrets.KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET }}
       run: aws sts get-caller-identity 
