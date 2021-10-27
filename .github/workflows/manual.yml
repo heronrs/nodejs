@@ -20,3 +20,8 @@ jobs:
       run: pip install -U awscli
     - name: cli version
       run: aws --version
+    - name: caller
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.key }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.secret }}
+      run: aws sts get-caller-identity 
