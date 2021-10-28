@@ -12,13 +12,13 @@ jobs:
           - aws-arm64
         include:
           - provider: aws-arm64
-            node_type: tg4.small
+            rack_params: node_type=tg4.small
     steps:
 #       - name: set-node-type
 #         run: echo "NODE_TYPE=tg4.small" >> $GITHUB_ENV
 #         if: ${{ matrix.provider == 'aws-arm64' }}
       - name: install
-        run: echo "install ${PROVIDER} ${NODE_TYPE}"
+        run: echo "rack install ${PROVIDER} ${RACK_PARAMS}"
         env:
           PROVIDER: ${{matrix.provider}}
-          NODE_TYPE: ${{matrix.node_type}}
+          RACK_PARAMS: ${{matrix.rack_params}}
