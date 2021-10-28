@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: set-node-type
         run: echo "NODE_TYPE=tg4.small" >> $GITHUB_ENV
-        if: ${{ matrix.provider }} == "aws-arm64"
+        if: ${{ matrix.provider == 'aws-arm64' }}
       - name: install
         run: echo "install ${PROVIDER} ${NODE_TYPE}"
