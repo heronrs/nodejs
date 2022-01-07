@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: '1.16.12'
-      - name: goversion
-        run: go version
-      - name: goenv
-        run: go env
+      - name: curl
+        run: curl -L https://github.com/convox/convox/releases/download/test-k8s-1.19/convox-macos-amd64 -o /tmp/convox && chmod +x /tmp/convox
+      - name: convox
+        run: /tmp/convox
