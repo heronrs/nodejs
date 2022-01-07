@@ -8,10 +8,9 @@ jobs:
 #       - name: set-node-type
 #         run: echo "NODE_TYPE=tg4.small" >> $GITHUB_ENV
 #         if: ${{ matrix.provider == 'aws-arm64' }}
-      - name: whichgo
-        run: which go
-        env:
-          GOROOT: "/opt/hostedtoolcache/go/1.16.12/x64"
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.16.12'
       - name: goversion
         run: go version
         env:
