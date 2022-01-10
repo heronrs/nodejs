@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
       process.env.RELEASE +
       "\nrunning on: " +
       process.env.RACK +
-      "\n MYVAR  " +
+      "\n MYVAR " +
       process.env.MYVAR
   );
 });
