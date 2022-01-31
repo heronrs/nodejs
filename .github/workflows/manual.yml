@@ -1,0 +1,13 @@
+name: test
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: macos-10.15
+    steps:
+#       - name: set-node-type
+#         run: echo "NODE_TYPE=tg4.small" >> $GITHUB_ENV
+#         if: ${{ matrix.provider == 'aws-arm64' }}
+      - name: brew
+        run: brew install jq unzip
+  
